@@ -96,7 +96,10 @@ export const VirtualTryOn = () => {
             {/* Try On Button */}
             <div className="flex justify-center mb-8">
               <Button
-                onClick={handleTryOn}
+                onClick={() => {
+                  console.log('Button clicked!', { avatarImage, clothingImage, isLoading });
+                  handleTryOn();
+                }}
                 disabled={!avatarImage || !clothingImage || isLoading}
                 size="lg"
                 className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-6 font-semibold"
